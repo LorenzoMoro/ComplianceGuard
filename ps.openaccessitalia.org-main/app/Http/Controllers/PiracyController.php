@@ -2033,6 +2033,17 @@ class PiracyController extends Controller
         if(!env('PIRACY_SHIELD_VPN_PSK')){
             $errors[] = "VPN pre-shared key not filled";
         }
+        if(!env('PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS')){
+            $errors[] = "Items validity not filled";
+        }else{
+            if(!is_numeric(env('PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS'))){
+                $errors[] = "Items validity is not a number";
+            }else{
+                if(env('PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS') <= 0){
+                    $errors[] = "Items validity must be at least 1";
+                }
+            }
+        }
         return $errors;
     }
 

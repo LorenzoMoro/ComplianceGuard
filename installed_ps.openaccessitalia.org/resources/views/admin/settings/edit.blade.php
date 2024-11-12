@@ -195,6 +195,19 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS">Items validity (in months)</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS" name="PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS" value="{{env("PIRACY_SHIELD_ITEMS_VALIDITY_MONTHS")}}" placeholder="6" type="number" min="1" step="1">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <i class="fas fa-history text-dark mr-1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
