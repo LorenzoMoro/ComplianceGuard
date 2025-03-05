@@ -1,5 +1,5 @@
 #!/bin/bash
-source="/var/lib/lxc/lamp/rootfs/var/www/html/storage/settings/bgp.csv"
+source="../../../../ps.openaccessitalia.org-main/storage/settings/bgp.csv"
 AS=`sed -n '1p;2p;' $source|grep AS|cut -d, -f2`
 NEI=`sed -n '1p;2p;' $source|grep NEI|cut -d, -f2`
 CONF="AS $AS
@@ -14,8 +14,7 @@ group "ComplianceGuard" {
 allow to ibgp
 "
 
-echo "$CONF" >/var/lib/lxc/bgp/rootfs/etc/bgpd.conf
-echo "Restarting lxc"
-lxc-stop -n bgp
-lxc-start -n bgp
+echo "$CONF" >/etc/bgpd.conf
+echo "Restarting service"
+systemctl restart openbgpd
 echo "Done"
