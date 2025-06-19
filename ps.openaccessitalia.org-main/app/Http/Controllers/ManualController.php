@@ -178,7 +178,7 @@ class ManualController extends Controller
     }
 
     private static function validateFQDN($domain) {
-        $pattern = "/(?=^.{1,254}$)(^(?:(?!\d+\.|-)[a-zA-Z0-9_\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$)/";
+        $pattern = "/(?=^.{1,254}$)(^(?:[a-zA-Z0-9_\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$)/";
         if (preg_match($pattern, $domain)) {
             return true;
         } else {
