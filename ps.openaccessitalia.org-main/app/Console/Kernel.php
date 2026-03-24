@@ -35,7 +35,7 @@ class Kernel extends ConsoleKernel
         //UPDATE BGP
         $schedule->call('App\Http\Controllers\Admin\AdminController@update_bgp')->timezone('Europe/Rome')->everyFiveMinutes();
         //LOG RETENTION
-        $schedule->call('App\Http\Controllers\Admin\AdminController@log_retention')->timezone('Europe/Rome')->hourly();
+        $schedule->call('App\Http\Controllers\Admin\ActionLogController@log_retention')->timezone('Europe/Rome')->hourly();
     }
 
     /**
